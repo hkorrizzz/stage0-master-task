@@ -101,7 +101,12 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]] arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
+        java.util.Arrays.sort(arr, java.util.Comparator.comparingInt(a -> a.length));
+        for (int[] subArr : arr) {
+            java.util.Arrays.sort(subArr);
+        }
+        return arr;
+
     }
 
 }
